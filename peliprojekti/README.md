@@ -1,0 +1,2 @@
+Pelin nimi?
+Wimme Myrsylä
