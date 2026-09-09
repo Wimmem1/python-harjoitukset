@@ -1,2 +1,2 @@
 Pelin nimi?
-Wimme Myrsylä
+Wimme Myrskylä
