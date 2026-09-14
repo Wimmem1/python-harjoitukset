@@ -5,8 +5,7 @@ while True:
     if syote == "":
         break
     
-    # Muunnetaan syöte luvuksi ja lisätään listaan
-    luku = float(syote)
+    luku = int(syote)
     luvut.append(luku)
 
 if luvut:
