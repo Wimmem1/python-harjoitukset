@@ -46,6 +46,7 @@ while True:
                 inventaario.append(x)
                 return(inventaario)
         def inventaario_f():
+            print("")
             for i in inventaario:
                 print(i)
 
@@ -58,12 +59,12 @@ while True:
             elif int(x) < 0:
                 print(f"{raha} - {x}")
             raha += int(x)
-            print(f"Rahaa tilillä {raha}")
+            print(f"Rahaa tilillä {raha}€")
             return(raha)
         
 
 
-        print("Inventaario, Lompakko, ")
+        print("\n \nInventaario, Lompakko, ")
         komento = input("Syötä komento:\n")
 
         if komento == "Inventaario":
