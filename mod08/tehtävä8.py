@@ -44,7 +44,7 @@
 
 valik = "tyhjä"
 
-lent = {}
+lent = {} #dictionary
 
 while valik != "":
 
