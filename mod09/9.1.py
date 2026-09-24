@@ -101,10 +101,8 @@ for i in range(1,11):
     autolista.append(uusi_auto)
 
 
-for Auto in autolista:
-    print(Auto.ominaisuudet())
-
-kuljettumatka2 = 0
+# for Auto in autolista:
+#     print(Auto.ominaisuudet())
 
 while_varmistus = True
 
@@ -116,7 +114,12 @@ while while_varmistus == True:
         if Auto.kuljettumatka >= 10000:
                 print("Kisa on päättynyt")
                 while_varmistus = False
+                print("Voittaja auton ominaisuudet ovat: \n")
+                Auto.ominaisuudet()
                 break
+        
+
+
 
         
 
