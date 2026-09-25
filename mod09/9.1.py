@@ -101,9 +101,6 @@ for i in range(1,11):
     autolista.append(uusi_auto)
 
 
-# for Auto in autolista:
-#     print(Auto.ominaisuudet())
-
 while_varmistus = True
 
 while while_varmistus == True:

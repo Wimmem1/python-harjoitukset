@@ -1,19 +1,19 @@
-# # Tehtävä 8.1
+# Tehtävä 8.1
 
-# k1 = int(input("Syötäkuukauden numero: \n"))
+k1 = int(input("Syötäkuukauden numero: \n"))
 
-# vuoden_ajat = ("kevätkuukausi","kesäkuukausi", "syksykuukausi", "talvikuukausi")
-# eka, toka, kolmas, neljäs = vuoden_ajat
+vuoden_ajat = ("kevätkuukausi","kesäkuukausi", "syksykuukausi", "talvikuukausi")
+eka, toka, kolmas, neljäs = vuoden_ajat
 
 
-# if k1 <= 2 or k1 == 12:
-#     print(f" kuukautesi on {neljäs}")
-# elif 2 < k1 <= 5:
-#     print(f" kuukautesi on {eka}")
-# elif 5 < k1 <= 8:
-#     print(f" kuukautesi on {toka}")
-# elif 8 < k1 <= 11:
-#     print(f" kuukautesi on {kolmas}")
+if k1 <= 2 or k1 == 12:
+    print(f" kuukautesi on {neljäs}")
+elif 2 < k1 <= 5:
+    print(f" kuukautesi on {eka}")
+elif 5 < k1 <= 8:
+    print(f" kuukautesi on {toka}")
+elif 8 < k1 <= 11:
+    print(f" kuukautesi on {kolmas}")
 
 
 ######################################################################################################################################################
@@ -42,29 +42,29 @@
 ######################################################################################################################################################
 # Tehtävä 8.3
 
-valik = "tyhjä"
+# valik = "tyhjä"
 
-lent = {} #dictionary
+# lent = {} #dictionary
 
-while valik != "":
+# while valik != "":
 
-    print("")
+#     print("")
     
-    valik = input("Syötä lentokenttä, tai kirjoita hae etsiäksesi lentokentän tietoja tai paina ENTER lopettaaksesi prosessin: \n")
+#     valik = input("Syötä lentokenttä, tai kirjoita hae etsiäksesi lentokentän tietoja tai paina ENTER lopettaaksesi prosessin: \n")
 
-    if valik == "hae":
-        haku = input("Syötä lentokenttä: \n")
-        if haku in lent:
-            print(f"Lentokentän {haku} ICAO-koodi on: {lent[haku]} \n")
-        else:
-            print("Syötettyä lentokenttää ei löytynyt \n")
+#     if valik == "hae":
+#         haku = input("Syötä lentokenttä: \n")
+#         if haku in lent:
+#             print(f"Lentokentän {haku} ICAO-koodi on: {lent[haku]} \n")
+#         else:
+#             print("Syötettyä lentokenttää ei löytynyt \n")
 
-    elif valik == "":
-        break
+#     elif valik == "":
+#         break
         
-    else:
-        ICAO = input("Syötä lentokentän ICAO-koodi: \n")
-        lent[valik] = ICAO
+#     else:
+#         ICAO = input("Syötä lentokentän ICAO-koodi: \n")
+#         lent[valik] = ICAO
 
 
         
