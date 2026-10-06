@@ -35,6 +35,32 @@ sähk_nopeus = 35 #Sähköpyörän nopeus
 norm_nopeus = 25 #Normaalin pyörän nopeus 
 
 
+class PeliLoki:
+    def __init__(self, pelaajan_nimi: str, pelaajan_ika: int):
+        self.pelaajan_nimi = pelaajan_nimi
+        self.pelaajan_ika = pelaajan_ika
+        self.loppuaika = 0
+        self.loppuraha = 0
+        self.selvisi_perille = False
+
+    def aseta_tulokset(self, aika: int, raha: int, voitto: bool):
+        self.loppuaika = aika
+        self.loppuraha = raha
+        self.selvisi_perille = voitto
+
+    def tallenna_ennatys(self, tiedostonimi: str = "suoritukset.txt"):
+        # Luodaan siisti tekstimuotoinen lokirivi tiedostoon tallennettavaksi
+        tulos_teksti = "onnistui" if self.selvisi_perille else "epäonnistui"
+        loki_viesti = (f"Pelaaja {self.pelaajan_nimi} ({self.pelaajan_ika}v) | "
+                       f"Tulos: {tulos_teksti} | Aika: {self.loppuaika}h | Rahaa: {self.loppuraha}€")
+        
+        # Tallennetaan JSON-muodossa, jotta 'Ennätykset'-valikko osaa lukea sen oikein
+        with open(tiedostonimi, "a", encoding="utf-8") as f:
+            json.dump(loki_viesti, f, ensure_ascii=False)
+            f.write("\n")
+
+
+
 
 while True:  #Setup Loop
 
@@ -50,6 +76,7 @@ while True:  #Setup Loop
 
             if komento == "Aloita":
                 print("\n Hienoa! Aloitetaan peli!")
+                pelin_loki = PeliLoki(nimi, ikä)
                 pelin_aloitus = True
                 break
 
@@ -101,11 +128,9 @@ while True:  #Setup Loop
     elif ikä < 12:
         print("Olet valitettavasti alaikäinen")
         break
-    else:
-        break
 
 
-while True:
+while True and ikä>=12:
 
     def hprint(teksti, nopeus=0.03):
         for kirjain in teksti:
@@ -380,30 +405,33 @@ while True:
         print(valikko())
         if matka >= int(etapit[etappi+1]["km"]):
             etappi = 8
+
+    if aika < 48:
+        hprint("Hienoa pääsit Helsinkiin ennen viikonlopun loppua")
+    else:
+        hprint("Et kerennyt Helsinkiin ennen viikonlopun loppua 😭😭")
+
+
+    hprint(f"Aikaa sinulla tähän matkaan meni {aika} tuntia")
+
+
+    voitto = aika < 48 and etappi >= 8
+
+
+    pelin_loki.aseta_tulokset(aika, raha, voitto)
+    pelin_loki.tallenna_ennatys("suoritukset.txt")
+
+
     break
 
     
-
-
-    #Koodaa event
-    #while etappi == 1:
 
 
 
         
     
     
-if aika < 48:
-    hprint("Hienoa pääsit Helsinkiin ennen viikonlopun loppua")
-else:
-    hprint("Et kerennyt Helsinkiin ennen viikonlopun loppua 😭😭")
 
-
-hprint(f"Aikaa sinulla tähän matkaan meni {aika} tuntia")
-
-with open("suoritukset.txt", "a") as f: #Tallennetaan suoritus
-    json.dump(f"Pelaaja {nimi} pääsi Helsinkiin ajassa {aika}tuntia", f)
-    f.write("\n")
 
 print("Kiitos pelaamisesta")
 
