@@ -1,43 +1,43 @@
-# Tehtävä 8.1
+# # Tehtävä 8.1
 
-k1 = int(input("Syötäkuukauden numero: \n"))
+# k1 = int(input("Syötäkuukauden numero: \n"))
 
-vuoden_ajat = ("kevätkuukausi","kesäkuukausi", "syksykuukausi", "talvikuukausi")
-eka, toka, kolmas, neljäs = vuoden_ajat
+# vuoden_ajat = ("kevätkuukausi","kesäkuukausi", "syksykuukausi", "talvikuukausi")
+# eka, toka, kolmas, neljäs = vuoden_ajat
 
 
-if k1 <= 2 or k1 == 12:
-    print(f" kuukautesi on {neljäs}")
-elif 2 < k1 <= 5:
-    print(f" kuukautesi on {eka}")
-elif 5 < k1 <= 8:
-    print(f" kuukautesi on {toka}")
-elif 8 < k1 <= 11:
-    print(f" kuukautesi on {kolmas}")
+# if k1 <= 2 or k1 == 12:
+#     print(f" kuukautesi on {neljäs}")
+# elif 2 < k1 <= 5:
+#     print(f" kuukautesi on {eka}")
+# elif 5 < k1 <= 8:
+#     print(f" kuukautesi on {toka}")
+# elif 8 < k1 <= 11:
+#     print(f" kuukautesi on {kolmas}")
 
 
 ######################################################################################################################################################
 
 # Tehtävä 8.2
 
-# nimi_set = set()
-# nimi = "tyhjä"
-# nimi2_set = set()
+nimi_set = set()
+nimi = "tyhjä"
+nimi2_set = set()
 
-# while nimi != "":
-#     nimi = input("Syötä nimi: \n")
-#     nimi_set.add(nimi)
+while nimi != "":
+    nimi = input("Syötä nimi: \n")
+    nimi_set.add(nimi)
     
-#     if nimi_set == nimi2_set:
-#         print("Aiemmin syötetty nimi\n")
-#     else:
-#         nimi2_set.add(nimi) 
-#         print("Uusi nimi\n")
+    if nimi_set == nimi2_set:
+        print("Aiemmin syötetty nimi\n")
+    else:
+        nimi2_set.add(nimi) 
+        print("Uusi nimi\n")
 
     
 
-# for i in nimi_set:
-#     print(i)
+for i in nimi_set:
+    print(i)
 
 ######################################################################################################################################################
 # Tehtävä 8.3
